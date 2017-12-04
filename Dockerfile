@@ -23,6 +23,10 @@ RUN { \
 		echo 'opcache.revalidate_freq=2'; \
 		echo 'opcache.fast_shutdown=1'; \
 		echo 'opcache.enable_cli=1'; \
+		echo 'max_execution_time=60'; \
+		echo 'memory_limit=128M'; \
+		echo 'post_max_size=48M'; \
+		echo 'upload_max_filesize=48M' \
 	} > /usr/local/etc/php/conf.d/opcache-recommended.ini
 
 RUN a2enmod rewrite expires
